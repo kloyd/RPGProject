@@ -1,9 +1,10 @@
-#include "Mage.h"
-#include "Priest.h"
-#include "Warrior.h"
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Mage.h"
+#include "Priest.h"
+#include "Warrior.h"
+
 using namespace std;
 
 vector<Player*> players;
@@ -22,7 +23,7 @@ int main() {
 
     int professionChoice = -1;
     int raceNumber;
-    string name;
+    string playerName;
     Race race;
     Player* tempPlayer;
 
@@ -31,10 +32,10 @@ int main() {
         cin >> professionChoice;
         if (professionChoice > 0 && professionChoice < 4) {
             cout << "What would you like to name your character?" << endl;
-            cin >> name;
+            getline(cin, playerName);
             printRaceMenu();
             cin >> raceNumber;
-            tempPlayer = createPlayer(name, professionChoice, raceNumber);
+            tempPlayer = createPlayer(playerName, professionChoice, raceNumber);
             players.push_back(tempPlayer);
         } else {
             if (professionChoice != 0)

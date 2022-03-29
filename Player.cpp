@@ -16,24 +16,24 @@ Race Player::getRace() const {
 }
 
 string Player::whatRace() const {
+    string result = "";
 	if (race == HUMAN) {
-		return "Human";
+        result = "Human";
 	}
 	else if (race == ELF) {
-		return "Elf";
+        result = "Elf";
 	}
 	else if (race == DWARF) {
-		return "Dwarf";
+        result = "Dwarf";
 	}
 	else if (race == ORC) {
-		return "Orc";
+        result = "Orc";
 	}
 	else if (race == TROLL) {
-		return "Troll";
+        result = "Troll";
 	}
-	else {
-		return "Unknown";
-	}
+
+    return result;
 }
 
 int Player::getHitPoints() const {
